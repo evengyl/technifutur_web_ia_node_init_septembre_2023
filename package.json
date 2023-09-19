@@ -1,0 +1,13 @@
+{
+  "name": "demo_node_js",
+  "version": "1.0.0",
+  "description": "met ce que tu veux je m'en tape",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+  }
+}
