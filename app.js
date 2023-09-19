@@ -1,4 +1,6 @@
 const http = require('http')
+const ejs = require('ejs')
+const fs = require('fs')
 const { head, nav, foot } = require("./templates/initTemplate")
 
 
@@ -13,12 +15,12 @@ const server = http.createServer((req, res) => {
     {
         if(path == "/home")
         {
-            res.write(`
-                ${head}
-                <h1>Page Home</h1>
-                ${nav}
-                ${foot}
-            `)
+            let title = "super titre on the super page"
+            let datas = JSON.parse(fs.readFileSync("./datas/MOCK_DATA.json").toString())
+            
+            let template = fs.readFileSync("./templates/home.ejs").toString()
+            let test = ejs.render(template, { title : title, datas : datas } )
+            res.write(test)
         }
         else if(path == "/contact")
         {
